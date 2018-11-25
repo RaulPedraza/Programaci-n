@@ -11,6 +11,7 @@ public class Ejercicio8 {
         int sumas [] = new int [10];
         String mensajeFinal = "";
         int continuar;
+        
         //Repetitiba para asignar las posiones en la matriz
         do{
         int fila = Integer.parseInt(JOptionPane.showInputDialog(null, "Introduce el numero de la fila"));
