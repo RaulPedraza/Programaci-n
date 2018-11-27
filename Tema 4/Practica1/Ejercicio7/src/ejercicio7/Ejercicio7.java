@@ -14,9 +14,8 @@ public class Ejercicio7 {
         {
             int codigo = Integer.parseInt(JOptionPane.showInputDialog("Introduce el codigo del producto que se ha comprado"));
             int cantidad = Integer.parseInt(JOptionPane.showInputDialog("Introduce la cantidad que se ha comprado de ese producto"));
-            /*NO SE COMO POSIONAR LA CANTIDAD QUE SE HA COMPRADO EN EL MISMO LUGAR DE QUE ESTA EL CODIGO 
-            Y LUEGO COMO NO LOS TENGO POSICIONADOS BIEN A LA HORA DE ORNEDAR NO ME VA  A SALIR BIEN
-            */
+            int posicion = Arrays.binarySearch(codigos, codigo);
+            ventas[posicion] = cantidad;
             JOptionPane.showConfirmDialog(null, "¿Quieres continuar?");
         }
         while(continuar ==0);
