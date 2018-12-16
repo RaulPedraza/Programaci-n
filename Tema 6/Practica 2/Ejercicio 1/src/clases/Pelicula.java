@@ -1,21 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package clases;
 
-/**
- *
- * @author 1gdaw12
- */
+import java.util.ArrayList;
+
 public class Pelicula {
     public String titulo;
-    public char año;
+    public char año[];
     public float duracion;
     public String tipo;
+    
+    private ArrayList<Estudio>lista;
 
-    public Pelicula(String titulo, char año, float duracion, String tipo) {
+    public Pelicula(String titulo, char[] año, float duracion, String tipo) {
         this.titulo = titulo;
         this.año = año;
         this.duracion = duracion;
@@ -30,11 +26,11 @@ public class Pelicula {
         this.titulo = titulo;
     }
 
-    public char getAño() {
+    public char[] getAño() {
         return año;
     }
 
-    public void setAño(char año) {
+    public void setAño(char[] año) {
         this.año = año;
     }
 
@@ -45,7 +41,20 @@ public class Pelicula {
     public void setDuracion(float duracion) {
         this.duracion = duracion;
     }
-    public void nueva pelicula(){
-        
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String clasificacion) {
+        this.tipo = clasificacion;
+    }
+
+    public ArrayList<Estudio> getLista() {
+        return lista;
+    }
+
+    public void setLista(ArrayList<Estudio> lista) {
+        this.lista = lista;
     }
 }
