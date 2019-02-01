@@ -5,15 +5,14 @@
  */
 package clases;
 
-/**
- *
- * @author 1gdaw12
- */
+
 public class Pelicula {
-    public String titulo;
-    public char año;
-    public float duracion;
-    public String tipo;
+    private String titulo;
+    private char año;
+    private float duracion;
+    private String tipo;
+    
+    private Arraylist<Estudio> listaEstudios;
 
     public Pelicula(String titulo, char año, float duracion, String tipo) {
         this.titulo = titulo;
@@ -45,7 +44,16 @@ public class Pelicula {
     public void setDuracion(float duracion) {
         this.duracion = duracion;
     }
-    public void nueva pelicula(){
+    public void nuevapelicula(){
+        
+    }
+    public void modificarPelicula(){
+        
+    }
+    public void despliegaPelicula(){
+        
+    }
+    public void eliminaPelicula(){
         
     }
 }
