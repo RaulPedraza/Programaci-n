@@ -7,8 +7,8 @@ public class Empleado {
     private String nombreApellidos;
     private String direccion;
     private int telefono;
-    private boolean sexo;
-    private boolean estadoCivil;
+    private char sexo;
+    private char estadoCivil;
     private int numEmpleado;
 
     public String getDni() {
@@ -51,19 +51,19 @@ public class Empleado {
         this.telefono = telefono;
     }
 
-    public boolean isSexo() {
+    public char isSexo() {
         return sexo;
     }
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(char sexo) {
         this.sexo = sexo;
     }
 
-    public boolean isEstadoCivil() {
+    public char isEstadoCivil() {
         return estadoCivil;
     }
 
-    public void setEstadoCivil(boolean estadoCivil) {
+    public void setEstadoCivil(char estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
 

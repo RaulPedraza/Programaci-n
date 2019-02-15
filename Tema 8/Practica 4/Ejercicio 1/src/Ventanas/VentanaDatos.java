@@ -1,6 +1,8 @@
 
 package Ventanas;
 
+import ejercicio.pkg1.Ejercicio1;
+
 
 public class VentanaDatos extends javax.swing.JFrame {
 
@@ -19,8 +21,8 @@ public class VentanaDatos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
+        bgSexo = new javax.swing.ButtonGroup();
+        bgEstadoCivil = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -31,11 +33,11 @@ public class VentanaDatos extends javax.swing.JFrame {
         tfDNI = new javax.swing.JTextField();
         tfDireccion = new javax.swing.JTextField();
         tfTelefono = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbHombre = new javax.swing.JRadioButton();
+        rbMujer = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        rbSoltero = new javax.swing.JRadioButton();
+        rbCasado = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -60,20 +62,27 @@ public class VentanaDatos extends javax.swing.JFrame {
 
         jLabel5.setText("Telefono");
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Hombre");
+        bgSexo.add(rbHombre);
+        rbHombre.setText("Hombre");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Mujer");
+        bgSexo.add(rbMujer);
+        rbMujer.setText("Mujer");
 
         jLabel6.setText("Sexo");
 
-        jRadioButton3.setText("Solter@");
-
-        jRadioButton4.setText("Casad@");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        bgEstadoCivil.add(rbSoltero);
+        rbSoltero.setText("Solter@");
+        rbSoltero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                rbSolteroActionPerformed(evt);
+            }
+        });
+
+        bgEstadoCivil.add(rbCasado);
+        rbCasado.setText("Casad@");
+        rbCasado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbCasadoActionPerformed(evt);
             }
         });
 
@@ -99,8 +108,18 @@ public class VentanaDatos extends javax.swing.JFrame {
         tfNumeroEmpleado.setEnabled(false);
 
         bAceptar.setText("Aceptar");
+        bAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAceptarActionPerformed(evt);
+            }
+        });
 
         bCancelar.setText("Cancelar");
+        bCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,13 +145,13 @@ public class VentanaDatos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
+                                .addComponent(rbSoltero)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2))
+                                .addComponent(rbCasado))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rbHombre)
+                                .addGap(18, 18, 18)
+                                .addComponent(rbMujer))
                             .addComponent(tfNombreApellido)
                             .addComponent(tfDNI)
                             .addComponent(tfNSS)
@@ -174,13 +193,13 @@ public class VentanaDatos extends javax.swing.JFrame {
                     .addComponent(tfTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
+                    .addComponent(rbHombre)
+                    .addComponent(rbMujer)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
+                    .addComponent(rbSoltero)
+                    .addComponent(rbCasado)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -212,15 +231,28 @@ public class VentanaDatos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    private void rbCasadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbCasadoActionPerformed
+        
+    }//GEN-LAST:event_rbCasadoActionPerformed
+
+    private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
+        Ejercicio1.cerrarVentanaDatos();
+    }//GEN-LAST:event_bCancelarActionPerformed
+
+    private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
+        if ()
+        Ejercicio1.crearEmpleado(tfDNI.getText(), tfNSS.getText(), tfNombreApellido.getText(), tfDireccion.getText(), tfTelefono.getText());
+    }//GEN-LAST:event_bAceptarActionPerformed
+
+    private void rbSolteroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbSolteroActionPerformed
+        
+    }//GEN-LAST:event_rbSolteroActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Nimbus look and feel */ 
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -254,8 +286,8 @@ public class VentanaDatos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAceptar;
     private javax.swing.JButton bCancelar;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup bgEstadoCivil;
+    private javax.swing.ButtonGroup bgSexo;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -269,10 +301,10 @@ public class VentanaDatos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton rbCasado;
+    private javax.swing.JRadioButton rbHombre;
+    private javax.swing.JRadioButton rbMujer;
+    private javax.swing.JRadioButton rbSoltero;
     private javax.swing.JTextField tfDNI;
     private javax.swing.JTextField tfDireccion;
     private javax.swing.JTextField tfFechaAlta;

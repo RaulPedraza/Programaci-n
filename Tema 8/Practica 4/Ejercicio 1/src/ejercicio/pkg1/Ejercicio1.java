@@ -7,14 +7,17 @@ import Clases.Usuario;
 import Ventanas.VentanaInicioSesion;
 import Ventanas.VentanaPrincipal;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Ejercicio1 {
    
     private static ArrayList<Usuario> listaUsuarios;
+    private static ArrayList<Empleado> listaEmpleados;
     private static VentanaDatos vd;
     private static VentanaInicioSesion vis;
     private static VentanaPrincipal vp;
     private static Usuario u;
+    private static Empleado em;
     
     public static void main(String[] args) {
         generarUsuarios();
@@ -56,6 +59,27 @@ public class Ejercicio1 {
     public static void darDeAlta(){
         vd = new VentanaDatos();
         vd.setVisible(true);
+    }
+    
+    public static void crearEmpleado(String tfDNI, String tfNSS, String tfNombreApellido, String tfDireccion, String tfTelefono) {
+        em = new Empleado ();
+        em.setDni(tfDNI);
+        em.setNombreApellidos(tfNombreApellido);
+        em.setNss(Integer.parseInt(tfNSS));
+        em.setDireccion(tfDireccion);
+        em.setTelefono(Integer.parseInt(tfTelefono));
+        JOptionPane.showMessageDialog(null, "El empleado ha sido dado de alta");
+        vd.setVisible(false);
+        listaEmpleados.add(em);
+    }
+    
+    public static void cerrarVentanaDatos(){
+        vd.setVisible(false);
+    }
+    
+    public static void darDeBaja(){
+        vd = new VentanaDatos();
+        vd.setVisible (true);
         
     }
     public static void cerrarProyecto(){

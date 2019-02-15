@@ -26,10 +26,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mPersona = new javax.swing.JMenu();
+        miAlta = new javax.swing.JMenuItem();
+        miBaja = new javax.swing.JMenuItem();
         miListado = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        miModificacion = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -48,32 +48,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         mPersona.setText("Personas");
 
-        miListado.setText("Alta");
-        miListado.addActionListener(new java.awt.event.ActionListener() {
+        miAlta.setText("Alta");
+        miAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miListadoActionPerformed(evt);
+                miAltaActionPerformed(evt);
             }
         });
+        mPersona.add(miAlta);
+
+        miBaja.setText("Baja");
+        miBaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miBajaActionPerformed(evt);
+            }
+        });
+        mPersona.add(miBaja);
+
+        miListado.setText("Listado");
         mPersona.add(miListado);
 
-        jMenuItem3.setText("Baja");
-        mPersona.add(jMenuItem3);
-
-        jMenuItem4.setText("Listado");
-        mPersona.add(jMenuItem4);
-
-        jMenu3.setText("Modificacion");
+        miModificacion.setText("Modificacion");
 
         jMenuItem2.setText("Por numero de empleado");
-        jMenu3.add(jMenuItem2);
+        miModificacion.add(jMenuItem2);
 
         jMenuItem5.setText("Por contrato");
-        jMenu3.add(jMenuItem5);
+        miModificacion.add(jMenuItem5);
 
         jMenuItem6.setText("Por departamento");
-        jMenu3.add(jMenuItem6);
+        miModificacion.add(jMenuItem6);
 
-        mPersona.add(jMenu3);
+        mPersona.add(miModificacion);
 
         jMenuBar1.add(mPersona);
 
@@ -108,9 +113,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void miListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miListadoActionPerformed
+    private void miAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaActionPerformed
         Ejercicio1.darDeAlta();
-    }//GEN-LAST:event_miListadoActionPerformed
+    }//GEN-LAST:event_miAltaActionPerformed
+
+    private void miBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBajaActionPerformed
+        Ejercicio1.darDeBaja();
+    }//GEN-LAST:event_miBajaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,16 +160,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JMenu mPersona;
+    private javax.swing.JMenuItem miAlta;
+    private javax.swing.JMenuItem miBaja;
     private javax.swing.JMenuItem miListado;
+    private javax.swing.JMenu miModificacion;
     // End of variables declaration//GEN-END:variables
 }
