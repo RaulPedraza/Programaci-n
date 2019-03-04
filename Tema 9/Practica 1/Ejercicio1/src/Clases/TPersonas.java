@@ -27,7 +27,7 @@ public class TPersonas {
             ps.setString(3, p.getProfesion());
             ps.setString(4, p.getTelefono());
             int n = ps.executeUpdate();
-            if(n== 0)
+            if(n != 1)
                 JOptionPane.showMessageDialog(null, "Cero filas actualizadas");
             
         }
@@ -70,15 +70,14 @@ public class TPersonas {
             String plantilla = "select * from personas";
             PreparedStatement ps = con.prepareStatement(plantilla);
             ResultSet resultado = ps.executeQuery();
-            if (resultado.next()){
-                p = new Persona();
+            while (resultado.next()){
+                Persona p = new Persona();
                 p.setNombre(resultado.getString("nombre"));
                 p.setEdad(Integer.parseInt(resultado.getString("edad")));
                 p.setProfesion(resultado.getString("profesion"));
                 p.setTelefono(resultado.getString("Telefono"));
-                
-            }else
-                throw new Exception ("Persona no encontrada");
+                listaPersonas.add(p);
+            }    
             
             resultado.close();
             ps.close();
@@ -86,5 +85,6 @@ public class TPersonas {
         catch (Exception e){
             return null;
         }
+        return listaPersonas;
     }
 }
