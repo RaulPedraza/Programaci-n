@@ -6,6 +6,7 @@
 package Ventanas;
 
 import Excepciones.sinTexto;
+import ejercicio2.Ejercicio2;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,14 +38,14 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        tfHoraInicio = new javax.swing.JTextField();
         tfHoraFin = new javax.swing.JTextField();
         tfNombre = new javax.swing.JTextField();
         tfLugar = new javax.swing.JTextField();
-        tfFecha = new javax.swing.JTextField();
         tfAforo = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         bAceptar = new javax.swing.JButton();
+        tfFecha = new javax.swing.JTextField();
+        tfHoraInicio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,8 +93,8 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
                             .addComponent(tfAforo, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(tfFecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                                    .addComponent(tfHoraInicio, javax.swing.GroupLayout.Alignment.LEADING))
+                                    .addComponent(tfFecha, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfHoraInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel5)
                                 .addGap(18, 18, 18)
@@ -103,7 +104,7 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(174, 174, 174)
                         .addComponent(jLabel7)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,20 +120,20 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(tfLugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(tfFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
-                    .addComponent(tfHoraInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfHoraFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfHoraFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfHoraInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(tfAforo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(bAceptar)
                 .addGap(25, 25, 25))
         );
@@ -155,6 +156,7 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
             if (tfAforo.getText().isEmpty())
                 throw new sinTexto();
             
+            Ejercicio2.darAlta(tfNombre.getText(),tfLugar.getText(),tfFecha.getText(),tfHoraInicio.getText(),tfHoraFin.getText(),tfAforo.getText());
         }
         catch(sinTexto e){
             JOptionPane.showMessageDialog(null, "Algunas casillas no estan rellenadas");
