@@ -9,6 +9,7 @@ import Ventanas.VentanaInicio;
 import java.sql.Connection;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
 
@@ -17,8 +18,9 @@ public class Ejercicio2 {
     private static BaseDatos bd;
     private static VentanaInicio vi;
     private static VentanaAltaEventos va;
-    private static TEventos oTEventos;
     private static Evento ev;
+    private static TEventos oTEventos;
+    
     public static void main(String[] args) {
         //Conectar con la base de datos
         
@@ -30,6 +32,7 @@ public class Ejercicio2 {
             JOptionPane.showMessageDialog(null,"Problemas con la base de datos");
             System.exit(-1);
         }
+        oTEventos = new TEventos(con);
         //Abrir la ventana
         
         vi = new VentanaInicio();
@@ -43,14 +46,25 @@ public class Ejercicio2 {
     
     public static void darAlta(String nombre, String lugar, String fecha, String horaInicio, String horaFin, String aforo){
         ev = new Evento();
+        
         ev.setNombre(nombre);
         ev.setLugar(lugar);
-        LocalDate f = LocalDate.parse(fecha);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate f = LocalDate.parse(fecha, formatter);
         ev.setFecha(f);
-        ev.setHoraInicio(LocalTime.parse(horaInicio));
-        ev.setHoraFinal(LocalTime.parse(horaInicio));
+        DateTimeFormatter formatTime = DateTimeFormatter.ofPattern("HH:mm");
+        ev.setHoraInicio(LocalTime.parse(horaInicio, formatTime));
+        ev.setHoraFinal(LocalTime.parse(horaInicio, formatTime));
         ev.setAforo(Integer.parseInt(aforo));
-        oTEventos.dardeAlta(ev);
+        
+        TEventos.dardeAlta(ev);
+        
         JOptionPane.showMessageDialog(null, "El evento ha sido dado de alta");
+        va.setVisible(false);
     }
+    
+    public static void cerrarVentanaAltas(){
+        va.setVisible(false);
+    }
+    
 }

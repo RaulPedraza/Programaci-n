@@ -46,6 +46,7 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
         bAceptar = new javax.swing.JButton();
         tfFecha = new javax.swing.JTextField();
         tfHoraInicio = new javax.swing.JTextField();
+        bSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +72,13 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
             }
         });
 
+        bSalir.setText("Salir");
+        bSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,15 +100,18 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
                                 .addComponent(tfNombre, javax.swing.GroupLayout.Alignment.LEADING))
                             .addComponent(tfAforo, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(tfFecha, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tfHoraInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(bAceptar)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(tfFecha, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tfHoraInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel5)))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(bAceptar)
-                                    .addComponent(tfHoraFin, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(tfHoraFin, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bSalir)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(174, 174, 174)
                         .addComponent(jLabel7)))
@@ -133,9 +144,11 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(tfAforo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(bAceptar)
-                .addGap(25, 25, 25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bAceptar)
+                    .addComponent(bSalir))
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -165,6 +178,10 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_bAceptarActionPerformed
+
+    private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
+        Ejercicio2.cerrarVentanaAltas();
+    }//GEN-LAST:event_bSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,6 +220,7 @@ public class VentanaAltaEventos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAceptar;
+    private javax.swing.JButton bSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

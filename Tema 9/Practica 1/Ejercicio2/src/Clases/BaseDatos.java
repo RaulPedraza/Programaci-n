@@ -26,4 +26,14 @@ public class BaseDatos {
         }
             
     }
+    
+    public static void desconectar(){
+        try{
+            con.close();
+        }
+        catch(Exception e){
+            
+        }
+        
+    }
 }

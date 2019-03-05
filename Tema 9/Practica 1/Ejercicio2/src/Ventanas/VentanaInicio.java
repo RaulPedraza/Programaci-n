@@ -32,6 +32,7 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         jMenu3 = new javax.swing.JMenu();
         jPopupMenu1 = new javax.swing.JPopupMenu();
+        jToolBar1 = new javax.swing.JToolBar();
         jMenuBar1 = new javax.swing.JMenuBar();
         miDardeAlta = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -41,7 +42,9 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        miDardeAlta.setText("File");
+        jToolBar1.setRollover(true);
+
+        miDardeAlta.setText("Acontecimientos");
 
         jMenuItem1.setText("Dar de Alta Evento");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +56,7 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         jMenuBar1.add(miDardeAlta);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Salir");
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -62,11 +65,13 @@ public class VentanaInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 334, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 309, Short.MAX_VALUE))
         );
 
         pack();
@@ -117,6 +122,7 @@ public class VentanaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenu miDardeAlta;
     // End of variables declaration//GEN-END:variables
 }
