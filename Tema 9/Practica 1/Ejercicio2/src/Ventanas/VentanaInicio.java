@@ -32,29 +32,60 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         jMenu3 = new javax.swing.JMenu();
         jPopupMenu1 = new javax.swing.JPopupMenu();
-        jToolBar1 = new javax.swing.JToolBar();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jToolBar2 = new javax.swing.JToolBar();
+        bAlta = new javax.swing.JButton();
+        bAsistente = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         miDardeAlta = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        miAlta = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         jMenu3.setText("jMenu3");
 
+        jMenuItem2.setText("jMenuItem2");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToolBar1.setRollover(true);
+        jToolBar2.setRollover(true);
+
+        bAlta.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 1\\imagenes\\Ejercicio2\\nueva-ventana.png")); // NOI18N
+        bAlta.setFocusable(false);
+        bAlta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bAlta.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAltaActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(bAlta);
+
+        bAsistente.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 1\\imagenes\\Ejercicio2\\diseno-web.png")); // NOI18N
+        bAsistente.setFocusable(false);
+        bAsistente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bAsistente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bAsistente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAsistenteActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(bAsistente);
 
         miDardeAlta.setText("Acontecimientos");
 
-        jMenuItem1.setText("Dar de Alta Evento");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        miAlta.setText("Dar de Alta Evento");
+        miAlta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                miAltaActionPerformed(evt);
             }
         });
-        miDardeAlta.add(jMenuItem1);
+        miDardeAlta.add(miAlta);
 
         jMenuBar1.add(miDardeAlta);
+
+        jMenu1.setText("Asistir a evento");
+        jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Salir");
         jMenuBar1.add(jMenu2);
@@ -65,21 +96,29 @@ public class VentanaInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+            .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 309, Short.MAX_VALUE))
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 295, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void miAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaActionPerformed
         Ejercicio2.abrirVentanaAltas();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_miAltaActionPerformed
+
+    private void bAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAltaActionPerformed
+        miAlta.doClick();
+    }//GEN-LAST:event_bAltaActionPerformed
+
+    private void bAsistenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAsistenteActionPerformed
+        
+    }//GEN-LAST:event_bAsistenteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,12 +156,16 @@ public class VentanaInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bAlta;
+    private javax.swing.JButton bAsistente;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JToolBar jToolBar2;
+    private javax.swing.JMenuItem miAlta;
     private javax.swing.JMenu miDardeAlta;
     // End of variables declaration//GEN-END:variables
 }

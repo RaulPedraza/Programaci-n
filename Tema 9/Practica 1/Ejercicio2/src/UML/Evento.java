@@ -1,8 +1,9 @@
 
-package Clases;
+package UML;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 
 public class Evento {
@@ -12,6 +13,8 @@ public class Evento {
     private LocalTime horaInicio;
     private LocalTime horaFinal;
     private int aforo;
+    
+    private ArrayList<Persona> listaPersonas;
 
     public Evento() {
     }

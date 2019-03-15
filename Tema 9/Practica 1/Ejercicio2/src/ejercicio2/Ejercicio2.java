@@ -1,9 +1,9 @@
 
 package ejercicio2;
 
-import Clases.BaseDatos;
-import Clases.Evento;
-import Clases.TEventos;
+import BD.BaseDatos;
+import UML.Evento;
+import BD.TEventos;
 import Ventanas.VentanaAltaEventos;
 import Ventanas.VentanaInicio;
 import java.sql.Connection;
