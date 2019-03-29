@@ -5,7 +5,7 @@
  */
 package Ventanas;
 
-import ejercicio2.Ejercicio2;
+import ejercicio2bd4o.Ejercicio2BD4o;
 
 /**
  *
@@ -36,9 +36,11 @@ public class VentanaInicio extends javax.swing.JFrame {
         jToolBar2 = new javax.swing.JToolBar();
         bAlta = new javax.swing.JButton();
         bAsistente = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         miDardeAlta = new javax.swing.JMenu();
         miAlta = new javax.swing.JMenuItem();
+        miBaja = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
@@ -72,6 +74,12 @@ public class VentanaInicio extends javax.swing.JFrame {
         });
         jToolBar2.add(bAsistente);
 
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 1\\imagenes\\Ejercicio2\\basura.png")); // NOI18N
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton1);
+
         miDardeAlta.setText("Acontecimientos");
 
         miAlta.setText("Dar de Alta Evento");
@@ -81,6 +89,14 @@ public class VentanaInicio extends javax.swing.JFrame {
             }
         });
         miDardeAlta.add(miAlta);
+
+        miBaja.setText("Dar de Baja Evento");
+        miBaja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miBajaActionPerformed(evt);
+            }
+        });
+        miDardeAlta.add(miBaja);
 
         jMenuBar1.add(miDardeAlta);
 
@@ -120,6 +136,10 @@ public class VentanaInicio extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bAsistenteActionPerformed
 
+    private void miBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBajaActionPerformed
+        Ejercicio2BD4o.
+    }//GEN-LAST:event_miBajaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -158,6 +178,7 @@ public class VentanaInicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAlta;
     private javax.swing.JButton bAsistente;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -166,6 +187,7 @@ public class VentanaInicio extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JMenuItem miAlta;
+    private javax.swing.JMenuItem miBaja;
     private javax.swing.JMenu miDardeAlta;
     // End of variables declaration//GEN-END:variables
 }
