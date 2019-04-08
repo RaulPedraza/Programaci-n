@@ -3,7 +3,6 @@ package BD;
 
 import Clases.Evento;
 import com.db4o.*;
-import javax.swing.JOptionPane;
 
 
 public class TEventos {

@@ -5,7 +5,7 @@
  */
 package Ventanas;
 
-import ejercicio2bd4o.Ejercicio2BD4o;
+import ejercicio2.Ejercicio2;
 
 /**
  *
@@ -137,7 +137,7 @@ public class VentanaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_bAsistenteActionPerformed
 
     private void miBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miBajaActionPerformed
-        Ejercicio2BD4o.
+       
     }//GEN-LAST:event_miBajaActionPerformed
 
     /**
