@@ -5,6 +5,8 @@
  */
 package Ventanas;
 
+import ejercicio1.Ejercicio1;
+
 /**
  *
  * @author 1gdaw05
@@ -36,8 +38,8 @@ public class VentanaAltaAbogados extends javax.swing.JFrame {
         tfNombre = new javax.swing.JTextField();
         tfApellidos = new javax.swing.JTextField();
         tfDireccion = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bAceptar = new javax.swing.JButton();
+        bSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,12 +54,17 @@ public class VentanaAltaAbogados extends javax.swing.JFrame {
 
         jLabel5.setText("Direccion");
 
-        jButton1.setText("Aceptar");
-
-        jButton2.setText("Salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bAceptar.setText("Aceptar");
+        bAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bAceptarActionPerformed(evt);
+            }
+        });
+
+        bSalir.setText("Salir");
+        bSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSalirActionPerformed(evt);
             }
         });
 
@@ -82,9 +89,9 @@ public class VentanaAltaAbogados extends javax.swing.JFrame {
                 .addContainerGap(42, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(bAceptar)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(bSalir)
                 .addGap(41, 41, 41))
         );
         layout.setVerticalGroup(
@@ -110,17 +117,21 @@ public class VentanaAltaAbogados extends javax.swing.JFrame {
                     .addComponent(tfDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(bAceptar)
+                    .addComponent(bSalir))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
+        Ejercicio1.cerrarAltaAbogados();
+    }//GEN-LAST:event_bSalirActionPerformed
+
+    private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
+        
+    }//GEN-LAST:event_bAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,8 +170,8 @@ public class VentanaAltaAbogados extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton bAceptar;
+    private javax.swing.JButton bSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

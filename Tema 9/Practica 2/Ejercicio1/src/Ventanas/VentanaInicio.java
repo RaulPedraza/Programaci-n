@@ -5,6 +5,8 @@
  */
 package Ventanas;
 
+import ejercicio1.Ejercicio1;
+
 /**
  *
  * @author 1gdaw05
@@ -30,12 +32,13 @@ public class VentanaInicio extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
-        jButton2 = new javax.swing.JButton();
+        bAltaAbogado = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        miAltaAbogado = new javax.swing.JMenu();
+        miAlta = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
@@ -49,11 +52,16 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\grupo.png")); // NOI18N
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton2);
+        bAltaAbogado.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\grupo.png")); // NOI18N
+        bAltaAbogado.setFocusable(false);
+        bAltaAbogado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bAltaAbogado.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        bAltaAbogado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAltaAbogadoActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(bAltaAbogado);
 
         jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\usuario.png")); // NOI18N
         jButton3.setFocusable(false);
@@ -74,8 +82,17 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\abogado.png")); // NOI18N
 
-        jMenu1.setText("Abogados");
-        jMenuBar1.add(jMenu1);
+        miAltaAbogado.setText("Abogados");
+
+        miAlta.setText("Dar de alta");
+        miAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAltaActionPerformed(evt);
+            }
+        });
+        miAltaAbogado.add(miAlta);
+
+        jMenuBar1.add(miAltaAbogado);
 
         jMenu2.setText("Clientes");
         jMenuBar1.add(jMenu2);
@@ -120,6 +137,14 @@ public class VentanaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void bAltaAbogadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAltaAbogadoActionPerformed
+        miAltaAbogado.doClick();
+    }//GEN-LAST:event_bAltaAbogadoActionPerformed
+
+    private void miAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaActionPerformed
+        Ejercicio1.abrirAltaAbogados();
+    }//GEN-LAST:event_miAltaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -157,17 +182,18 @@ public class VentanaInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bAltaAbogado;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JMenuItem miAlta;
+    private javax.swing.JMenu miAltaAbogado;
     // End of variables declaration//GEN-END:variables
 }
