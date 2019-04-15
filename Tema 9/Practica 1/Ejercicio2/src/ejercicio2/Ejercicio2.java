@@ -1,9 +1,8 @@
 
 package ejercicio2;
 
-import BD.BaseDatos;
+import BD.*;
 import UML.Evento;
-import BD.TEventos;
 import Ventanas.VentanaAltaEventos;
 import Ventanas.VentanaInicio;
 import java.sql.Connection;

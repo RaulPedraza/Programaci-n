@@ -1,4 +1,3 @@
-
 package BD;
 
 import java.sql.Connection;
@@ -7,6 +6,7 @@ import java.sql.DriverManager;
 
 
 public class BaseDatosRelacional {
+    
     private static Connection con;
     
     public Connection conectar(){
@@ -17,11 +17,13 @@ public class BaseDatosRelacional {
             String usuario = "root";
             String pass = "usbw";
             con = DriverManager.getConnection(url ,usuario ,pass);
+            
             return con;
         }
         catch(Exception e){
             return null;
         }
+        
     }
 
     public static void desconectar(){

@@ -18,6 +18,7 @@ public class VentanaInicio extends javax.swing.JFrame {
      */
     public VentanaInicio() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,13 +33,13 @@ public class VentanaInicio extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
-        bAltaAbogado = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        bAltaAbogados = new javax.swing.JButton();
+        bAltaCliente = new javax.swing.JButton();
+        bAltaCasos = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        miAltaAbogado = new javax.swing.JMenu();
-        miAlta = new javax.swing.JMenuItem();
+        mAbogados = new javax.swing.JMenu();
+        miAltaAbogados = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
@@ -52,47 +53,37 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
-        bAltaAbogado.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\grupo.png")); // NOI18N
-        bAltaAbogado.setFocusable(false);
-        bAltaAbogado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bAltaAbogado.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        bAltaAbogado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAltaAbogadoActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(bAltaAbogado);
+        bAltaAbogados.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\grupo.png")); // NOI18N
+        bAltaAbogados.setFocusable(false);
+        bAltaAbogados.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bAltaAbogados.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(bAltaAbogados);
 
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\usuario.png")); // NOI18N
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jButton3);
+        bAltaCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\usuario.png")); // NOI18N
+        bAltaCliente.setFocusable(false);
+        bAltaCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bAltaCliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(bAltaCliente);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\documento.png")); // NOI18N
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton1);
+        bAltaCasos.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\documento.png")); // NOI18N
+        bAltaCasos.setFocusable(false);
+        bAltaCasos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bAltaCasos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(bAltaCasos);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\1gdaw05.ARRIAGAINFO\\Desktop\\Raul\\Program\\Programaci-n\\Tema 9\\Practica 2\\img\\abogado.png")); // NOI18N
 
-        miAltaAbogado.setText("Abogados");
+        mAbogados.setText("Abogados");
 
-        miAlta.setText("Dar de alta");
-        miAlta.addActionListener(new java.awt.event.ActionListener() {
+        miAltaAbogados.setText("Dar de alta");
+        miAltaAbogados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miAltaActionPerformed(evt);
+                miAltaAbogadosActionPerformed(evt);
             }
         });
-        miAltaAbogado.add(miAlta);
+        mAbogados.add(miAltaAbogados);
 
-        jMenuBar1.add(miAltaAbogado);
+        jMenuBar1.add(mAbogados);
 
         jMenu2.setText("Clientes");
         jMenuBar1.add(jMenu2);
@@ -118,13 +109,13 @@ public class VentanaInicio extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(jLabel1)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2))
@@ -133,17 +124,9 @@ public class VentanaInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void bAltaAbogadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAltaAbogadoActionPerformed
-        miAltaAbogado.doClick();
-    }//GEN-LAST:event_bAltaAbogadoActionPerformed
-
-    private void miAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaActionPerformed
+    private void miAltaAbogadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAltaAbogadosActionPerformed
         Ejercicio1.abrirAltaAbogados();
-    }//GEN-LAST:event_miAltaActionPerformed
+    }//GEN-LAST:event_miAltaAbogadosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,9 +165,9 @@ public class VentanaInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bAltaAbogado;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton bAltaAbogados;
+    private javax.swing.JButton bAltaCasos;
+    private javax.swing.JButton bAltaCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu2;
@@ -193,7 +176,7 @@ public class VentanaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JMenuItem miAlta;
-    private javax.swing.JMenu miAltaAbogado;
+    private javax.swing.JMenu mAbogados;
+    private javax.swing.JMenuItem miAltaAbogados;
     // End of variables declaration//GEN-END:variables
 }

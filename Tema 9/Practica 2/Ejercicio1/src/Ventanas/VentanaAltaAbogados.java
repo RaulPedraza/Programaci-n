@@ -6,6 +6,7 @@
 package Ventanas;
 
 import ejercicio1.Ejercicio1;
+import Excepciones.*;
 
 /**
  *
@@ -18,6 +19,7 @@ public class VentanaAltaAbogados extends javax.swing.JFrame {
      */
     public VentanaAltaAbogados() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -130,7 +132,21 @@ public class VentanaAltaAbogados extends javax.swing.JFrame {
     }//GEN-LAST:event_bSalirActionPerformed
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
-        
+        try{
+            if (tfDni.getText().isEmpty())
+                throw new sinTexto();
+            if (tfNombre.getText().isEmpty())
+                throw new sinTexto();
+            if (tfApellidos.getText().isEmpty())
+                throw new sinTexto();
+            if (tfDireccion.getText().isEmpty())
+                throw new sinTexto();
+            
+            Ejercicio1.DardeAltaAbogado(tfDni.getText(),tfNombre.getText(),tfApellidos.getText(),tfDireccion.getText());
+        }    
+        catch (sinTexto e){
+                
+        }
     }//GEN-LAST:event_bAceptarActionPerformed
 
     /**
