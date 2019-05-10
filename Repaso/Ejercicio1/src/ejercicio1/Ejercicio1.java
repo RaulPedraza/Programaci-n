@@ -10,7 +10,7 @@ public class Ejercicio1 {
     
     public static void main(String[] args) {
         int [] listaNumeros = new int [3];
-        listaNumeros = llenarArray(listaNumeros);
+        llenarArray(listaNumeros);
         int opcion = menu();
         
         switch (opcion){
@@ -36,12 +36,11 @@ public class Ejercicio1 {
         
     }
     
-    public static  int[] llenarArray(int[] listaNumeros){
+    public static  void llenarArray(int[] listaNumeros){
         for (int x = 0; x < listaNumeros.length; x++){
             int numero = Integer.parseInt(JOptionPane.showInputDialog("Introduce un numero"));
             listaNumeros [x] = numero;
         }
-        return listaNumeros;
     }
     
     public static int menu(){

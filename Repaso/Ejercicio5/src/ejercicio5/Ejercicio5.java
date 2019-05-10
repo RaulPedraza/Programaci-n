@@ -14,7 +14,7 @@ public class Ejercicio5 {
             listaNumeros[x] = numero;
         }
         int opcion = menu();
-        Arrays.
+        
     }
     
     public static int menu(){
