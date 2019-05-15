@@ -10,8 +10,9 @@ public class Ejercicio7 {
         listaNumeros = new ArrayList();
         int continuar = 0;
         do{
-            JOptionPane.showInputDialog("Introduce un numero");
-            continuar = Integer.parseInt(JOptionPane.showConfirmDialog(null, "Quieres introducir otro numero?"));
+            int numero = Integer.parseInt(JOptionPane.showInputDialog("Introduce un numero"));
+            continuar = JOptionPane.showConfirmDialog(null, "Quieres introducir otro Numero");
+            listaNumeros.add(numero);
         }
         while(continuar == 0);
         
@@ -25,7 +26,13 @@ public class Ejercicio7 {
                 buscarNumero();
                 break;
             case 3:
-                modificarNumero()
+                modificarNumero();
+                break;
+            case 4:
+                eliminarNumero();
+                break;
+            case 5:
+                añadirNumero();
                 break;
         }
     }
@@ -56,5 +63,40 @@ public class Ejercicio7 {
     
     public static void modificarNumero(){
         
+    }
+    
+    public static void eliminarNumero(){
+        String cadena = "";
+        for(int x = 0; x < listaNumeros.size(); x++){
+            int numero = listaNumeros.get(x);
+            cadena = cadena + numero + " ";
+        }
+        int posicion = Integer.parseInt(JOptionPane.showInputDialog("Que numero quieres eliminar: \n" + cadena + "(Pon la posicion del numero)"));
+        posicion = posicion -1;
+        listaNumeros.remove(posicion);
+        
+        String cadena2 = "";
+        for(int x = 0; x < listaNumeros.size(); x++){
+            int numero = listaNumeros.get(x);
+            cadena2 = cadena2 + numero + " ";
+        }
+        
+        JOptionPane.showMessageDialog(null, cadena2);
+    }
+    
+    public static void añadirNumero(){
+        Integer numero = Integer.parseInt(JOptionPane.showInputDialog("Que numero quieres introducir"));
+        int posicion = Integer.parseInt(JOptionPane.showInputDialog("En que posicion quieres meter el numero"));
+        String cadena = "";
+        posicion = posicion -1;
+        listaNumeros.add(posicion, numero);
+        
+        
+        for(int x = 0; x < listaNumeros.size(); x++){
+            int valor = listaNumeros.get(x);
+            cadena = cadena + valor + " ";
+        }
+        
+        JOptionPane.showMessageDialog(null, cadena);
     }
 }
