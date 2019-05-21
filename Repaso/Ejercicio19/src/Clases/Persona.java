@@ -6,10 +6,10 @@ public class Persona {
     private String apellidos;
     private String nombre;
     private String sexo;
-    private int edad;
-    private int peso;
+    private Integer edad;
+    private Integer peso;
 
-    public Persona(String dni, String apellidos, String nombre, String sexo, int edad, int peso) {
+    public Persona(String dni, String apellidos, String nombre, String sexo, Integer edad, Integer peso) {
         this.dni = dni;
         this.apellidos = apellidos;
         this.nombre = nombre;
@@ -53,21 +53,24 @@ public class Persona {
         this.sexo = sexo;
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
-    public int getPeso() {
+    public Integer getPeso() {
         return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(Integer peso) {
         this.peso = peso;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Persona{" + "dni=" + dni + ", apellidos=" + apellidos + ", nombre=" + nombre + ", sexo=" + sexo + ", edad=" + edad + ", peso=" + peso + '}';
+    }
 }

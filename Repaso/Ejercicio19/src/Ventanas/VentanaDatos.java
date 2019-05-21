@@ -179,6 +179,19 @@ public class VentanaDatos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void verDatos(String dni, String n, String a, String s, String edad, String peso){
+        tfDNI.setText(dni);
+        tfNombre.setText(n);
+        tfApellido.setText(a);
+        tfEdad.setText(edad);
+        tfPeso.setText(peso);
+        if(s == "Hombre"){
+            rbHombre.setSelected(true);
+        }else
+            rbMujer.setSelected(true);
+        
+        Ejercicio19.abrirVentanaDatos();
+    }
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
         Ejercicio19.validarDatos();
         String sexo;
@@ -187,7 +200,17 @@ public class VentanaDatos extends javax.swing.JFrame {
         }else
             sexo = "Mujer";
         Ejercicio19.obtenerDatos(tfDNI.getText(),tfNombre.getText(),tfApellido.getText(),sexo,tfEdad.getText(),tfPeso.getText());
-        JOptionPane.showConfirmDialog(null, "La persona ha sido introducida correctamente");
+        JOptionPane.showMessageDialog(null, "La persona ha sido introducida correctamente");
+        int continuar = JOptionPane.showConfirmDialog(null,"¿Queires introducir a otra persona?");
+        if(continuar == 0){
+            tfDNI.setText(null);
+            tfNombre.setText(null);
+            tfApellido.setText(null);
+            tfEdad.setText(null);
+            tfPeso.setText(null);
+            bgSexo.clearSelection();
+        }else
+            Ejercicio19.cerrarVentanaDatos();
     }//GEN-LAST:event_bAceptarActionPerformed
 
     private void tfDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDNIActionPerformed
