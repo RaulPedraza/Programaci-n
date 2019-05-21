@@ -84,21 +84,23 @@ public class Ejercicio19 {
         }
     }   
     
-    public static void cogerDatos(Persona p){
-        String dni = p.getDni();
-        String n = p.getNombre();
-        String a = p.getApellidos();
-        String s = p.getSexo();
-        String edad = p.getEdad().toString();
-        String peso = p.getPeso().toString();
+    public static void cogerDatos(Persona pe, int metodo){
+        String dni = pe.getDni();
+        String n = pe.getNombre();
+        String a = pe.getApellidos();
+        String s = pe.getSexo();
+        String edad = pe.getEdad().toString();
+        String peso = pe.getPeso().toString();
         
         vd = new VentanaDatos();
-        vd.verDatos(dni, n, a, s, edad, peso);
+        vd.verDatos(dni, n, a, s, edad, peso,metodo);
     }
     public static void eliminar(){
         String dni = JOptionPane.showInputDialog("Introduce el DNI de la persona que quieres eliminar");
+        int metodo = 2;
         for(int x = 0; x < personas.size(); x++){
             if(personas.get(x).getDni().equals(dni)){
+                cogerDatos(personas.get(x),metodo);
                 personas.remove(x);
             }else
                 JOptionPane.showMessageDialog(null, "Ese DNI no corresponde a ninguna persona");

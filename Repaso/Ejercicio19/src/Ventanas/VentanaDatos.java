@@ -14,9 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class VentanaDatos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaDatos
-     */
+    private int metodo;
+    
     public VentanaDatos() {
         initComponents();
     }
@@ -179,38 +178,46 @@ public class VentanaDatos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void verDatos(String dni, String n, String a, String s, String edad, String peso){
+    public void verDatos(String dni, String n, String a, String s, String edad, String peso, int met){
         tfDNI.setText(dni);
         tfNombre.setText(n);
         tfApellido.setText(a);
         tfEdad.setText(edad);
         tfPeso.setText(peso);
-        if(s == "Hombre"){
+        if(s.equals("Hombre")){
             rbHombre.setSelected(true);
         }else
             rbMujer.setSelected(true);
+        metodo = met;
         
         Ejercicio19.abrirVentanaDatos();
     }
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
-        Ejercicio19.validarDatos();
-        String sexo;
-        if(rbHombre.isSelected()){
-            sexo = "Hombre";
-        }else
-            sexo = "Mujer";
-        Ejercicio19.obtenerDatos(tfDNI.getText(),tfNombre.getText(),tfApellido.getText(),sexo,tfEdad.getText(),tfPeso.getText());
-        JOptionPane.showMessageDialog(null, "La persona ha sido introducida correctamente");
-        int continuar = JOptionPane.showConfirmDialog(null,"¿Queires introducir a otra persona?");
-        if(continuar == 0){
-            tfDNI.setText(null);
-            tfNombre.setText(null);
-            tfApellido.setText(null);
-            tfEdad.setText(null);
-            tfPeso.setText(null);
-            bgSexo.clearSelection();
-        }else
-            Ejercicio19.cerrarVentanaDatos();
+        if(metodo == 1){
+            Ejercicio19.validarDatos();
+            String sexo;
+            if(rbHombre.isSelected()){
+                sexo = "Hombre";
+            }else
+                sexo = "Mujer";
+            Ejercicio19.obtenerDatos(tfDNI.getText(),tfNombre.getText(),tfApellido.getText(),sexo,tfEdad.getText(),tfPeso.getText());
+            JOptionPane.showMessageDialog(null, "La persona ha sido introducida correctamente");
+            int continuar = JOptionPane.showConfirmDialog(null,"¿Queires introducir a otra persona?");
+            if(continuar == 0){
+                tfDNI.setText(null);
+                tfNombre.setText(null);
+                tfApellido.setText(null);
+                tfEdad.setText(null);
+                tfPeso.setText(null);
+                bgSexo.clearSelection();
+            }else
+                Ejercicio19.cerrarVentanaDatos();
+        }else if(metodo == 2){
+            int eliminar = JOptionPane.showConfirmDialog(null, "¿Estas seguro que quieres eliminar esta persona?");
+            if(eliminar == 0){
+                
+            }
+        }
     }//GEN-LAST:event_bAceptarActionPerformed
 
     private void tfDNIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDNIActionPerformed
